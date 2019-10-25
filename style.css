@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img{
+    /* width: 80px; */
+    height: 60px;
+}
+
+input{
+    border: none;
+    text-align: center;
+    font-size: 2rem;
+    box-sizing: border-box;
+    /* display: inline; */
+    width: 100%;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  padding: 0 1.5rem;
+  margin: auto;
+  overflow: hidden;
+}
+a{
+    text-decoration: none;
+    color: white;
+    padding-bottom: 0.2rem;
+    border-bottom: 2px solid transparent;
+}
+
+a:hover{
+    border-bottom: 2px solid white;
+}
+
+li {
+  list-style: none;
+}
+
+#main-header .container {
+    display: flex;
+    justify-content: space-between;
+    /* gap: 30rem; */
+    /* justify-content: center; */
+    /* vertical-align: center; */
+    align-items: center;
+    align-content: space-between;
+
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+
+#main-header .container ul{
+    display: flex;
+    gap: 2rem;
+    /* justify-content: center; */
+    /* align-content: center; */
+    /* align-items: center; */
+    /* justify-items: center; */
+    vertical-align: center;
+}
+#main-header .container ul li{
+    padding: 0.5rem;
+    /* vertical-align: center; */
+}
+
+#main-header{
+    background: green;
+    color: white;
+}
+
+.player{
+    /* width: 33%; */
+    text-align: center;
+    /* display: inline-block; */
+    /* flex-direction: column; */
+}
+
+.player-stats{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 3px dotted black;
+    justify-items: center;
+    align-items: center;
+}
+
+.player-counter{
+    display: flex;
+    /* width: 25vw; */
+    gap: 2rem;
+    /* justify-items: center; */
+}
+
+.level-counter, .force-counter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#main-section .container{
+    display: grid;
+    gap: 0.7rem;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.player-force{
+    display: inline;
+}
+
+.player-force{
+    font-size: 3rem;
+}
+.counter{
+    font-size: 2rem;
+}
+
+#add-player .player-stats{
+    box-sizing: border-box;
+    height:232px;
+    /* margin-top: 2rem; */
+    justify-content: center;
+    border: 1px outset black;
+}
+.plus{
+    font-size: 3rem;
+    border: 2px  inset black;
+    border-radius: 50%;
+    padding: 1.5rem 3rem;
+}
+
+#add-player input{
+    background: #fff;
+}
