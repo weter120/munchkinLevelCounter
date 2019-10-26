@@ -15,23 +15,21 @@ class Player{
             <div class="player-counter">
                 <div class="level-counter">
                     <h4>Уровень</h4>
-                    <i class="fas fa-angle-up fa-3x"></i>
+                    <i class="fas fa-angle-up fa-2x"></i>
                     <p class="counter">${this.level}</p>
-                    <i class="fas fa-angle-down fa-3x"></i>
+                    <i class="fas fa-angle-down fa-2x"></i>
                 </div>
                 <div class="force-counter">
                     <h4>Сила</h4>
-                    <i class="fas fa-angle-up fa-3x"></i>
+                    <i class="fas fa-angle-up fa-2x"></i>
                     <p class="counter">${this.power}</p>
-                    <i class="fas fa-angle-down fa-3x"></i>
+                    <i class="fas fa-angle-down fa-2x"></i>
                 </div>
             </div>
         </div>
         `;
         document.getElementById('main-section').children[0].appendChild(playerUI);
-        // console.log(document.querySelectorAll(`.${this.className} .fa-angle-up`));
         Array.from(document.querySelectorAll(`.${this.className} .fa-angle-up`)).forEach((element) => {
-            // console.log(element.parentElement.children[0].textContent);
             element.addEventListener('click', (e)=>{
                 switch (element.parentElement.children[0].textContent){
                     case "Уровень":
@@ -52,21 +50,28 @@ class Player{
             });
         });
         Array.from(document.getElementsByClassName('fa-angle-down')).forEach((element) => {
-            // console.log(element.parentElement.children[0].textContent);
             element.addEventListener('click', (e)=>{
                 switch (element.parentElement.children[0].textContent){
                     case "Уровень":
-                        this.level--;
-                        this.updateSummary();
-                        document.querySelector(`.${this.className} .player-stats .player-counter .level-counter .counter`).textContent = `${this.level}`;
-                        document.querySelector(`.${this.className} .player-stats .player-force`).textContent = `${this.summary}`;
-                        break;
+                        if(this.level === 1){
+                            break;
+                        } else{
+                            this.level--;
+                            this.updateSummary();
+                            document.querySelector(`.${this.className} .player-stats .player-counter .level-counter .counter`).textContent = `${this.level}`;
+                            document.querySelector(`.${this.className} .player-stats .player-force`).textContent = `${this.summary}`;
+                            break;
+                        }
                     case "Сила":
-                        this.power--;
-                        this.updateSummary();
-                        document.querySelector(`.${this.className} .player-stats .player-counter .force-counter .counter`).textContent = `${this.power}`;
-                        document.querySelector(`.${this.className} .player-stats .player-force`).textContent = `${this.summary}`;
-                        break;
+                        if(this.power === 0){
+                            break;
+                        } else{
+                            this.power--;
+                            this.updateSummary();
+                            document.querySelector(`.${this.className} .player-stats .player-counter .force-counter .counter`).textContent = `${this.power}`;
+                            document.querySelector(`.${this.className} .player-stats .player-force`).textContent = `${this.summary}`;
+                            break;
+                        }
                         
                 }
                     
@@ -87,19 +92,10 @@ class Player{
 let playerCount = 0;
 let players = [];
 
-// let buttonUps = Array.from(document.getElementsByClassName('fa-angle-up'));
-// // console.log(arrays);
-// buttonUps.forEach((button)=>{
-//     // console.log
-//     button.addEventListener('click', (e)=>{
-//         // console.log(button.parentElement.parentElement.className);
-//     });
-// });
 
 document.getElementById('add-player').addEventListener('click',(e)=>{
     playerCount++;
     players.push(new Player);
-    // console.log(players);
 });
 
 document.getElementsByClassName('fa-dice')[0].addEventListener('click',(e)=>{
